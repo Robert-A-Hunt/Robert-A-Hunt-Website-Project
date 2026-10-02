@@ -177,13 +177,16 @@ def page(slug, title, description, body, graph=None):
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;600&family=Spectral:ital,wght@0,500;0,600;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Belleza&family=Lato:ital,wght@0,400;0,700;1,400&display=swap">
 <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<meta name="theme-color" content="#281e38">
 {ld(graph) if graph else ""}"""
     content = f"""{banner}<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="{href('')}">Robert A. Hunt<small>AI, faith and being human</small></a>
+    <a class="brand" href="{href('')}"><img class="logo-light" src="images/logo-horizontal.png" alt="Robert A. Hunt, Author" width="274" height="60"><img class="logo-dark" src="images/logo-horizontal-white.png" alt="Robert A. Hunt, Author" width="274" height="60"></a>
     <nav class="site-nav" aria-label="Main"><ul>{nav}</ul></nav>
   </div>
 </header>
@@ -193,11 +196,12 @@ def page(slug, title, description, body, graph=None):
 <footer class="site-footer">
   <div class="wrap">
     <div>
-      <p><strong style="color:var(--fg)">Dr. Robert A. Hunt</strong><br>{TITLE_FULL}.</p>
+      <img class="footer-logo" src="images/logo-horizontal-white.png" alt="Robert A. Hunt, Author" width="274" height="60">
+      <p><strong>Dr. Robert A. Hunt</strong><br>{TITLE_FULL}.</p>
       <p>&copy; {YEAR} Robert A. Hunt. Last updated <time datetime="{TODAY}">{date.today():%B %-d, %Y}</time>.</p>
     </div>
     <div>
-      <p>Elsewhere</p>
+      <p class="eyebrow" style="color:var(--footer-muted)">Elsewhere</p>
       <ul>{foot_links}</ul>
     </div>
   </div>
