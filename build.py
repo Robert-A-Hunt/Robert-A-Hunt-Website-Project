@@ -68,7 +68,8 @@ PAGES = [  # slug, nav label
 def href(slug):
     if PREVIEW:
         return "index.html" if slug == "" else f"{slug}.html"
-    return "/" if slug == "" else f"/{slug}"
+    # Relative links work both at robertahunt.com and at the github.io review address.
+    return "./" if slug == "" else slug
 
 def esc(s):
     return html.escape(s, quote=True)
